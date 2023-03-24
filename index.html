@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open Library Book Search</title>
+    <link rel="stylesheet" href="CSS/style.css">
+  </head>
+  <body>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Cerca libri di una categoria...">
+      <button id="search-btn">Cerca</button>
+    </div>
+
+    <div class="book-list">
+      <h2>Risultati della ricerca</h2>
+      <ul id="books"></ul>
+    </div>
+
+    <div class="book-description">
+      <h2>Descrizione del libro</h2>
+      <div id="book-desc"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="JS/script.js"></script>
+  </body>
+</html>
