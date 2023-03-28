@@ -1,11 +1,15 @@
 // Funzione per contattare l'API Open Library e recuperare la lista dei libri
 function searchBooks(category) {
   const url = `https://openlibrary.org/subjects/${category}.json`;
-  
+  const bookList = document.getElementById("books");
+  bookList.innerHTML = "";
+
+
   fetch(url)
     .then(response => response.json())
     .then(data => {
       const books = data.works;
+      
       const bookList = document.getElementById("books");
       bookList.innerHTML = "";
 
@@ -20,10 +24,14 @@ function searchBooks(category) {
     .catch(error => console.error(error));
 }
 
-// Funzione per contattare l'API Open Library e recuperare la descrizione di un libro
+// Funzione per contattare l'API Open Library e recuperare la descrizione di un libro, viene aggiunto anche il div description in html
 function getBookDescription(key) {
   const url = `https://openlibrary.org${key}.json`;
-  
+  const descriptionDiv = document.getElementsByClassName("book-description")[0];
+  descriptionDiv.innerHTML=`<h2 class="text-center py-4">Book description</h2>
+  <div id="book-desc"></div>`;
+
+
   fetch(url)
   .then(response => response.json())
   .then(data => {
@@ -48,13 +56,8 @@ function getBookDescription(key) {
   bgImage.style.height = "50vh";
   bgText.style.top="24%";
   searchDiv.innerHTML=`<div class="book-list my-3">
-  <h2 class="text-center py-5">Risultati della ricerca</h2>
+  <h2 class="text-center py-5">Search result</h2>
   <ul id="books"></ul>
-</div>
-
-<div class="book-description">
-  <h2>Descrizione del libro</h2>
-  <div id="book-desc"></div>
 </div>`;
 
 
