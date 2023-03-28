@@ -86,7 +86,10 @@
   
   
   .book-list {
+    border-bottom: 1px solid black;
     margin: 20px;
+    padding-bottom: 40px;
+
   }
   
   .book-list h2 {
@@ -104,14 +107,16 @@
     border-radius: 4px;
     background-color: #fff;
     cursor: pointer;
+   width: 60%;
+   margin: auto;
   }
   
   #books li:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
-  
-  .book-description {
-    margin: 20px;
+  .book-description{
+    margin-left: 20px;
+    margin-bottom: 50px;
   }
   
   .book-description h2 {
@@ -122,6 +127,17 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: #ffffff;
+    width: 55%;
+    margin: auto;
   }
   
+  @media only screen and (max-width: 620px) {
+    #books li {
+      width: 90%;
+    }
+
+    #book-desc{
+      width: 90%;
+    }
+  }

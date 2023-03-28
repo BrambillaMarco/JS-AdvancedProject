@@ -43,9 +43,10 @@ function getBookDescription(key) {
   
   // Funzione per gestire il click su un libro e visualizzarne la descrizione
   function showBookDescription(event) {
-  const key = event.target.getAttribute("data-key");
-  getBookDescription(key);
+    const key = event.target.getAttribute("data-key");
+    getBookDescription(key);
   }
+  
   
   // Funzione per gestire il click sul pulsante di ricerca e visualizzare il div 'Risultati della ricerca'
   function handleSearch() {
