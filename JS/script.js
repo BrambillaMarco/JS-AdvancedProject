@@ -54,6 +54,8 @@ function getBookDescription(key) {
   const descriptionDiv = document.getElementsByClassName("book-description")[0];
   descriptionDiv.innerHTML=`<h2 class="text-center py-4">Book description</h2>
   <div id="book-desc"></div>`;
+  loadingDiv = document.getElementById("loading");
+  loadingDiv.style.display = "block";
 
 
   fetch(url)
@@ -61,7 +63,9 @@ function getBookDescription(key) {
   .then(data => {
   const bookDesc = document.getElementById("book-desc");
   bookDesc.innerHTML = data.description;
+  loadingDiv.style.display = "none";
   descriptionDiv.scrollIntoView({behavior: "smooth"}); //scrolla fino alla descrizione
+
   })
   .catch(error => console.error(error));
   }
