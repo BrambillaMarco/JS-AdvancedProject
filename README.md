@@ -19,3 +19,19 @@ Questa repo contiene il progetto per start2impact su javascript per la lettura e
 -The results are then displayed in the empty div element with the ID "search-result". 
 -The JavaScript file also defines an event listener for the book list items, which will display a modal with more detailed information about the selected book when clicked.
 
+
+
+-KNOWN BUGS
+
+1:The known bug is that if an incorrect category is entered immediately after a correct category, the loading message and the description div do not disappear even though they should.
+
+Here the code: // controlla se ci sono libri nella categoria
+                 if (!books || books.length === 0) {
+                 bookList.innerHTML = '<div class="text-center">Nessun libro trovato.</div>';
+                 loadingDiv.style.display = "none";
+         
+                  //resetto il descriptionDiv se c'era gia del testo, altrimenti non cambia nulla
+                 const descriptionDiv = document.getElementsByClassName("book-description")[0];
+                 descriptionDiv.innerHTML="";
+                return;
+                }
