@@ -26,8 +26,11 @@ function searchBooks(category) {
        // controlla se ci sono libri nella categoria
        if (!books || books.length === 0) {
          bookList.innerHTML = `<div class="text-center">Nessun libro trovato.</div>`;
-         
          loadingDiv.style.display = "none";
+         
+         //resetto il descriptionDiv se c'era gia del testo, altrimenti non cambia nulla
+         const descriptionDiv = document.getElementsByClassName("book-description")[0];
+         descriptionDiv.innerHTML="";
         return;
       }
       
@@ -105,6 +108,8 @@ function getBookDescription(key) {
   searchBooks(category);
   }
   
+  
   // Aggiungiamo un listener al pulsante di ricerca
   const searchBtn = document.getElementById("search-btn");
   searchBtn.addEventListener("click", handleSearch);
+  

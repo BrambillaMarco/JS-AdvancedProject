@@ -1,0 +1,16 @@
+{
+  "name": "js-advancedproject",
+  "version": "1.0.0",
+  "description": "Questa repo contiene il progetto per start2impact su javascript per la lettura e scoperta di nuovi libri utilizzando diverse API gratuite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^5.0.1",
+    "weebpack": "^1.0.1"
+  }
+}
