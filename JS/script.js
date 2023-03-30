@@ -18,6 +18,9 @@ function searchBooks(category) {
       const bookList = document.getElementById("books");
       bookList.innerHTML = "";
 
+      //tolgo la descrizione del libro precedente
+      const descriptionDiv = document.getElementsByClassName("book-description")[0];
+      descriptionDiv.innerHTML="";
 
       //tolgo il messaggio di caricamento
       const loadingDiv = document.getElementById("loading");
