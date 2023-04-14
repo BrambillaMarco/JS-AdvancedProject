@@ -1,10 +1,6 @@
 # JS-AdvancedProject
 Questa repo contiene il progetto per start2impact su javascript per la lettura e scoperta di nuovi libri utilizzando diverse API gratuite
 
-ONLINE WEBSITE:
-https://openlibrary-booksearch.netlify.app/
-
-
 -PROJECT DESCRIPTION:
 1:HTML
 -This is a basic HTML file with a linked CSS file and a linked JavaScript file. 
