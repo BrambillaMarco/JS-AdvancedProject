@@ -1,5 +1,5 @@
 # JS-AdvancedProject
-Questa repo contiene il progetto per start2impact su javascript per la lettura e scoperta di nuovi libri utilizzando diverse API gratuite
+This repo contains the start2impact javascript project for reading and discovering new books using several free APIs
 
 ONLINE WEBSITE:
 https://openlibrary-booksearch.netlify.app/
@@ -25,6 +25,3 @@ https://openlibrary-booksearch.netlify.app/
 
 
 
--KNOWN BUGS
-
-1:The known bug is that if an incorrect category is entered immediately after a correct category, the loading message and the description div do not disappear even though they should.
