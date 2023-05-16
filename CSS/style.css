@@ -84,18 +84,6 @@ body {
   color: black;
 }
 
-#loading {
-  display: none;
-  position: fixed;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
   
   
 .book-list {
@@ -116,7 +104,7 @@ body {
 #books li {
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
   border-radius: 4px;
   background-color: #fff;
   cursor: pointer;

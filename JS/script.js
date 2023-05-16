@@ -3,13 +3,8 @@ function searchBooks(category) {
 	const url = `https://openlibrary.org/subjects/${category}.json`;
 	const bookList = document.getElementById("books");
 	bookList.innerHTML = "";
-
-	// Creazione del div per il caricamento
-	const loadingDiv = document.createElement("div");
-	loadingDiv.id = "loading";
-	loadingDiv.innerHTML = "Loading...";
-	loadingDiv.style.display = "block";
-	document.body.appendChild(loadingDiv);
+	
+	
 	fetch(url)
 		.then(response => response.json())
 		.then(data => {
@@ -22,14 +17,10 @@ function searchBooks(category) {
 			const descriptionDiv = document.getElementsByClassName("book-description")[0];
 			descriptionDiv.innerHTML = "";
 
-			//tolgo il messaggio di caricamento
-			const loadingDiv = document.getElementById("loading");
-			loadingDiv.style.display = "none";
-
 			// controlla se ci sono libri nella categoria
 			if (!books || books.length === 0) {
 				bookList.innerHTML = `<div class="text-center">Nessun libro trovato.</div>`;
-				loadingDiv.style.display = "none";
+				
 
 				//resetto il descriptionDiv se c'era gia del testo, altrimenti non cambia nulla
 				const descriptionDiv = document.getElementsByClassName("book-description")[0];
@@ -45,9 +36,6 @@ function searchBooks(category) {
 
 		}).catch(error => {
 			console.error(error);
-			const loadingDiv = document.getElementById("loading");
-			//tolgo il messaggio di caricamento anche se occorre un errore
-			loadingDiv.style.display = "none";
 			alert("Errore durante la ricerca dei libri. Riprova più tardi!");
 		});
 }
@@ -58,16 +46,14 @@ function getBookDescription(key) {
 	const descriptionDiv = document.getElementsByClassName("book-description")[0];
 	descriptionDiv.innerHTML = `<h2 class="text-center py-4">Book description</h2>
   <div id="book-desc"></div>`;
-	loadingDiv = document.getElementById("loading");
-	loadingDiv.style.display = "block";
 
 
 	fetch(url)
 		.then(response => response.json())
 		.then(data => {
+
 			const bookDesc = document.getElementById("book-desc");
 			bookDesc.innerHTML = data.description;
-			loadingDiv.style.display = "none";
 			descriptionDiv.scrollIntoView({
 				behavior: "smooth"
 			}); //scrolla fino alla descrizione
@@ -106,7 +92,7 @@ function handleSearch() {
 		return;
 	}
 
-	//chiamata alla funione searchBooks
+	//chiamata alla funzione searchBooks
 	searchBooks(category);
 }
 
