@@ -59,6 +59,15 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
   
+footer {
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
 #search-btn {
 
   display: inline-block;

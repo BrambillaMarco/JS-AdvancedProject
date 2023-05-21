@@ -8,6 +8,8 @@ function searchBooks(category) {
 	fetch(url)
 		.then(response => response.json())
 		.then(data => {
+
+			
 			const books = data.works;
 
 			const bookList = document.getElementById("books");
@@ -37,6 +39,9 @@ function searchBooks(category) {
 		}).catch(error => {
 			console.error(error);
 			alert("Errore durante la ricerca dei libri. Riprova più tardi!");
+		}).finally(() => {
+			const loading = getElementById("loading");
+			loading.style.display = none;
 		});
 }
 
@@ -73,10 +78,6 @@ function handleSearch() {
 	const bgImage = document.getElementsByClassName("bg-image")[0];
 	const bgText = document.getElementsByClassName("bg-text")[0];
 	const searchDiv = document.getElementById("search-result");
-	searchDiv.innerHTML = `<div class="book-list my-3">
-    <h2 class="text-center ps-4 py-5">Search result</h2>
-    <ul id="books"></ul>
-    </div>`;
 
 	//diminuisco la grandezza dell'immagine di sfondo per avere una maggiore chiarezza complessiva
 	bgImage.style.height = "50vh";
