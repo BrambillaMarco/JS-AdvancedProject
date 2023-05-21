@@ -36,6 +36,9 @@ function searchBooks(category) {
 			li.addEventListener("click", showBookDescription);
 			bookList.appendChild(li);
 
+			searchBtn.addEventListener("click", handleSearch);
+			searchInput.value = "";
+
 		}).catch(error => {
 			console.error(error);
 			alert("Errore durante la ricerca dei libri. Riprova più tardi!");
@@ -92,6 +95,9 @@ function handleSearch() {
 		alert("Inserisci una categoria valida!");
 		return;
 	}
+
+	// rimuovo il listener dal pulsante di ricerca per evitare che venga premuto nuovamente
+	searchBtn.removeEventListener("click", handleSearch);
 
 	//chiamata alla funzione searchBooks
 	searchBooks(category);
